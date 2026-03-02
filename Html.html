@@ -1,0 +1,229 @@
+
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Donasi Resmi - Yayasan Baitul Ikhlas</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f5f7fb;
+    color: #333;
+}
+
+/* HEADER */
+.header {
+    background: linear-gradient(135deg, #1a8604, #0965c2);
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.header p {
+    margin-top: 10px;
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+/* CONTAINER */
+.container {
+    max-width: 1000px;
+    margin: -50px auto 40px;
+    padding: 20px;
+}
+
+/* CARD */
+.card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+}
+
+.section-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #0d47a1;
+    margin-bottom: 20px;
+    border-left: 5px solid #ffd700;
+    padding-left: 10px;
+}
+
+/* FORM */
+.form-group {
+    margin-bottom: 18px;
+}
+
+label {
+    font-weight: 500;
+    display: block;
+    margin-bottom: 6px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #1976d2;
+    outline: none;
+    box-shadow: 0 0 5px rgba(25,118,210,0.2);
+}
+
+/* BUTTON */
+.btn-donasi {
+    background: linear-gradient(135deg, #25D366, #1ebe5d);
+    color: white;
+    border: none;
+    padding: 15px;
+    width: 100%;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-donasi:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* INFO BOX */
+.info {
+    background: #f1f6ff;
+    border-left: 5px solid #1976d2;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+.info h3 {
+    color: #0d47a1;
+    margin-bottom: 10px;
+}
+
+/* FOOTER */
+.footer {
+    background: #0d47a1;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    font-size: 14px;
+}
+</style>
+
+<script>
+function kirimWhatsApp() {
+    let nama = document.getElementById("nama").value;
+    let hp = document.getElementById("hp").value;
+    let donasi = document.getElementById("donasi").value;
+    let program = document.getElementById("program").value;
+    let pesan = document.getElementById("pesan").value;
+
+    let nomorAdmin = "6281398354656/6281284439712"; // GANTI DENGAN NOMOR WHATSAPP ADMIN
+
+    let text =
+    "Assalamu'alaikum Admin Yayasan Baitul Ikhlas%0A%0A" +
+    "Saya ingin berdonasi:%0A%0A" +
+    "👤 Nama: " + nama + "%0A" +
+    "📱 No HP: " + hp + "%0A" +
+    "🎯 Program: " + program + "%0A" +
+    "💰 Nominal: Rp " + donasi + "%0A" +
+    "📝 Pesan/Doa: " + pesan + "%0A%0A" +
+    "Mohon panduan transfer donasi. Terima kasih.";
+
+    window.open("https://wa.me/" + nomorAdmin + "?text=" + text, "_blank");
+}
+</script>
+
+</head>
+<body>
+
+<div class="header">
+    <h1>Donasi Online Resmi</h1>
+    <p>Yayasan Baitul Ikhlas Peduli Yatim</p>
+</div>
+
+<div class="container">
+    <div class="card">
+        <div class="section-title">Form Donasi Online</div>
+
+        <div class="form-group">
+            <label>Nama Lengkap</label>
+            <input type="text" id="nama" placeholder="Masukkan nama lengkap">
+        </div>
+
+        <div class="form-group">
+            <label>No. WhatsApp</label>
+            <input type="text" id="hp" placeholder="08xxxxxxxxxx">
+        </div>
+
+        <div class="form-group">
+            <label>Jumlah Donasi (Rp)</label>
+            <input type="number" id="donasi" placeholder="Contoh: 10.000">
+        </div>
+
+        <div class="form-group">
+            <label>Pilih Program Donasi</label>
+            <select id="program">
+                <option>Donasi Anak Yatim</option>
+                <option>Santunan Anak Yatim</option>
+                <option>Santunan Pendidikan</option>
+                <option>Wakaf & Infaq</option>
+                <option>Pembangunan Pesantren</option>
+                <option>Baju Baru Anak Yatim</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Pesan / Doa (Opsional)</label>
+            <textarea id="pesan" rows="4" placeholder="Tulis doa atau pesan..."></textarea>
+        </div>
+
+        <button class="btn-donasi" onclick="kirimWhatsApp()">
+            💚 Donasi Sekarang via WhatsApp
+        </button>
+
+        <div class="info">
+            <h3>Informasi Rekening Resmi</h3>
+            <p><strong>Bank:</strong> BRI (Bank Rakyat Indonesia)</p>
+            <p><strong>No Rekening:</strong> 0080-01074427-53-5</p>
+            <p><strong>Atas Nama:</strong> Yayasan Baitul Ikhlas</p>
+            <p><strong>Bank:</strong> BCA (Bank Central Asia)</p>
+            <p><strong>No Rekening:</strong> 5421230821</p>
+            <p><strong>Atas Nama:</strong> Deny Firmansyah</p>
+            <p>Konfirmasi donasi akan dilayani oleh admin resmi yayasan.</p>
+        </div>
+
+    </div>
+</div>
+
+<div class="footer">
+    © 2026 Yayasan Baitul Ikhlas Peduli Yatim | Donasi Resmi Lembaga
+</div>
+
+</body>
+</html>
